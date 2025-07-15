@@ -21,5 +21,5 @@ Pour faire fonctionner ce projet sur votre propre machine, vous devrez le cloner
 Pour copier les fichiers du projet sur votre ordinateur, utilisez la commande suivante :
 
 ```bash
-git clone [https://github.com/VOTRE_PSEUDO/VOTRE_REPO.git](https://github.com/VOTRE_PSEUDO/VOTRE_REPO.git)
-cd VOTRE_REPO
+git clone https://github.com/nezzeur/Loldle-online.git
+cd Loldle-online
