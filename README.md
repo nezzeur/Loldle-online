@@ -1,4 +1,4 @@
-# LoLdle - Jeu de devinette sur League of Legends
+# LoLdle - League of Legend
 
 Ce projet est une version personnalisée du jeu LoLdle, un jeu de devinette basé sur l'univers et les champions de League of Legends.
 
