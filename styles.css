@@ -1,0 +1,419 @@
+:root {
+    --gold-lol: #c8aa6e;
+    --gold-light: #f0e6d2;
+    --gold-dark: #785a28;
+    --bg-dark: #010a13;
+    --bg-darker: #001025;
+    --blue-lol: #005a82;
+    --red-lol: #950000;
+    --green-lol: #008000;
+}
+
+body {
+    font-family: 'Beaufort for LOL', serif;
+    background:
+            linear-gradient(135deg, rgba(1, 10, 19, 0.95), rgba(0, 16, 37, 0.95)),
+            radial-gradient(circle at 20% 20%, rgba(200, 170, 110, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(0, 90, 130, 0.1) 0%, transparent 50%),
+            url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gMTAwIDAgTCAwIDAgMCAxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMDAsIDE3MCwgMTEwLCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+');
+    background-size: cover, 400px 400px, 600px 600px, 100px 100px;
+    background-position: center, top left, bottom right, center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.nav-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 999;
+}
+
+.nav-container button {
+    padding: 10px 15px;
+    background: linear-gradient(to right, var(--gold-dark), var(--gold-lol));
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Beaufort for LOL', serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.nav-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(200, 170, 110, 0.4);
+}
+
+#user-email {
+    color: var(--gold-lol);
+    font-size: 0.9rem;
+    align-self: center;
+    margin-left: 10px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+            radial-gradient(circle at 10% 10%, rgba(200, 170, 110, 0.03) 0%, transparent 40%),
+            radial-gradient(circle at 90% 90%, rgba(0, 90, 130, 0.03) 0%, transparent 40%),
+            linear-gradient(45deg, transparent 49%, rgba(200, 170, 110, 0.02) 50%, transparent 51%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    max-width: 900px;
+    margin: 80px auto 20px auto;
+    background: rgba(1, 10, 19, 0.85);
+    border: 2px solid var(--gold-dark);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow:
+            0 0 30px rgba(0, 0, 0, 0.8),
+            0 0 60px rgba(200, 170, 110, 0.15),
+            inset 0 0 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-lol), var(--gold-dark));
+    box-shadow: 0 0 15px var(--gold-lol);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: var(--gold-lol);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow:
+            0 0 10px rgba(200, 170, 110, 0.5),
+            0 0 20px rgba(200, 170, 110, 0.3),
+            0 0 30px rgba(200, 170, 110, 0.2);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-lol), transparent);
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#champion-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-family: 'Beaufort for LOL', serif;
+    border: 2px solid var(--gold-dark);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--gold-light);
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#champion-input:focus {
+    border-color: var(--gold-lol);
+    box-shadow: 0 0 20px rgba(200, 170, 110, 0.4);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-dark);
+    border: 1px solid var(--gold-dark);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(200, 170, 110, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.suggestion-item:hover,
+.suggestion-item.selected {
+    background: rgba(200, 170, 110, 0.15);
+    color: var(--gold-lol);
+}
+
+.suggestion-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-dark);
+    object-fit: cover;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#validate-btn {
+    flex: 1;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-family: 'Beaufort for LOL', serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, var(--gold-dark), var(--gold-lol), var(--gold-dark));
+    color: var(--bg-dark);
+}
+
+#validate-btn:hover {
+    background: linear-gradient(to right, var(--gold-lol), var(--gold-light), var(--gold-lol));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(200, 170, 110, 0.4);
+}
+
+/* NOUVEAU : conteneur pour la grille scrollable */
+.grid-wrapper {
+    overflow-x: auto; /* Active le défilement horizontal si le contenu dépasse */
+    margin: 0 -15px; /* Compense le padding du container sur mobile */
+    padding: 0 15px;
+}
+
+/* On force la grille à avoir une largeur minimale pour activer le scroll */
+.headers,
+.guess-row {
+    display: grid;
+    grid-template-columns: 80px repeat(8, minmax(100px, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+    text-align: center;
+    min-width: 850px; /* Largeur minimale pour que toutes les colonnes s'affichent bien */
+}
+
+.headers {
+    margin-bottom: 15px;
+    padding: 12px 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    border: 1px solid var(--gold-dark);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--gold-lol);
+}
+
+.guess-row {
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(200, 170, 110, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+.champion-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 2px solid var(--gold-dark);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.cell {
+    padding: 10px 5px;
+    border: 1px solid var(--gold-dark);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.3);
+    overflow-wrap: break-word;
+}
+
+.cell.correct {
+    background: linear-gradient(135deg, rgba(0, 100, 0, 0.7), rgba(0, 80, 0, 0.7));
+    color: #aaffaa;
+    border-color: #00aa00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.cell.partial {
+    background: linear-gradient(135deg, rgba(200, 170, 110, 0.7), rgba(160, 140, 90, 0.7));
+    color: var(--bg-dark);
+    border-color: var(--gold-lol);
+    box-shadow: 0 0 10px rgba(200, 170, 110, 0.3);
+}
+
+.cell.wrong {
+    background: linear-gradient(135deg, rgba(80, 0, 0, 0.7), rgba(60, 0, 0, 0.7));
+    color: #ffaaaa;
+    border-color: #aa0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.error-message {
+    color: #ff6b6b;
+    text-align: center;
+    padding: 12px;
+    background: rgba(80, 0, 0, 0.4);
+    border: 1px solid #aa0000;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: none;
+    font-style: italic;
+}
+
+/* ... (le reste du CSS pour les modales reste identique) ... */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 10000; backdrop-filter: blur(10px); padding: 15px;
+}
+.modal-content {
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker)); border: 2px solid var(--gold-lol); border-radius: 15px; padding: 30px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 0 30px rgba(200, 170, 110, 0.3), 0 0 60px rgba(0, 0, 0, 0.8); animation: modalAppear 0.5s ease-out; position: relative; max-height: 90vh; overflow-y: auto;
+}
+.modal-content::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold-dark), var(--gold-lol), var(--gold-dark)); box-shadow: 0 0 15px var(--gold-lol);
+}
+.modal-large { max-width: 600px; }
+.modal-victory { max-width: 500px; }
+.modal-content h2 { color: var(--gold-lol); margin-bottom: 25px; font-size: 2rem; text-shadow: 0 0 10px rgba(200, 170, 110, 0.5); }
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--gold-light); font-weight: bold; }
+.form-group input {
+    width: 100%; padding: 12px 15px; border: 2px solid var(--gold-dark); border-radius: 8px; background: rgba(0, 0, 0, 0.6); color: var(--gold-light); font-family: 'Beaufort for LOL', serif; font-size: 1rem; outline: none; transition: all 0.3s ease; box-sizing: border-box;
+}
+.form-group input:focus { border-color: var(--gold-lol); box-shadow: 0 0 15px rgba(200, 170, 110, 0.3); background: rgba(0, 0, 0, 0.8); }
+.modal-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 25px; }
+.modal-buttons button, #modal-restart-btn {
+    padding: 12px 25px; font-size: 1.1rem; background: linear-gradient(to right, var(--gold-dark), var(--gold-lol), var(--gold-dark)); color: var(--bg-dark); border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-family: 'Beaufort for LOL', serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; flex-grow: 1;
+}
+.modal-buttons button:hover, #modal-restart-btn:hover {
+    background: linear-gradient(to right, var(--gold-lol), var(--gold-light), var(--gold-lol)); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(200, 170, 110, 0.4);
+}
+.modal-message { margin-top: 15px; padding: 10px; border-radius: 5px; font-weight: bold; }
+.modal-message.success { background: rgba(0, 100, 0, 0.3); color: #aaffaa; border: 1px solid #00aa00; }
+.modal-message.error { background: rgba(150, 0, 0, 0.3); color: #ffaaaa; border: 1px solid #aa0000; }
+.champion-name { font-size: 2rem; color: var(--gold-lol); margin: 15px 0; text-shadow: 0 0 10px rgba(200, 170, 110, 0.5); }
+.score-display { font-size: 1.5rem; color: var(--gold-light); margin: 15px 0; font-weight: bold; }
+.score-added-message { color: var(--green-lol); margin-top: 15px; font-weight: bold; }
+#scores-content { text-align: left; max-height: 400px; overflow-y: auto; margin: 20px 0; }
+.score-item {
+    display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; margin-bottom: 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--gold-dark); border-radius: 8px; transition: all 0.3s ease;
+}
+.score-item:hover { background: rgba(200, 170, 110, 0.1); }
+.score-item .rank { font-size: 1.2rem; font-weight: bold; color: var(--gold-lol); width: 40px; }
+.score-item .email { flex: 1; color: var(--gold-light); overflow-wrap: break-word; }
+.score-item .score { font-size: 1.1rem; font-weight: bold; color: var(--gold-lol); }
+#extra-score-area { margin: 15px 0; padding: 10px; border-radius: 5px; }
+@keyframes modalAppear { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- Responsive --- */
+
+/* Base pour mobile */
+.container {
+    padding: 15px;
+    margin-top: 20px;
+}
+.nav-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 2rem;
+}
+
+/* Tablette (e.g., > 900px) */
+@media (min-width: 900px) {
+    .container {
+        padding: 30px;
+        margin-top: 80px;
+        max-width: 900px;
+    }
+    .nav-container {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        justify-content: flex-start;
+    }
+    h1 {
+        font-size: 2.8rem;
+    }
+    .grid-wrapper {
+        overflow-x: visible; /* Plus besoin de scroll quand il y a la place */
+        margin: 0;
+        padding: 0;
+    }
+    .headers,
+    .guess-row {
+        min-width: 100%; /* La grille prend la largeur disponible */
+    }
+    .modal-buttons {
+        flex-wrap: nowrap;
+    }
+    .modal-buttons button {
+        flex-grow: 0;
+    }
+}
+
+/* Pour les écrans très larges */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1100px;
+    }
+}
